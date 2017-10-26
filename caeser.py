@@ -127,6 +127,8 @@ class Message(object):
         '''
         new_message = []
         shift_dict = self.build_shift_dict(shift)
+
+        #Apply shift to each char
         for char in self.message_text:
             if char.lower() in string.ascii_lowercase and char != char.lower():
                 new_message.append(shift_dict[char.lower()].upper())
@@ -231,6 +233,9 @@ class CiphertextMessage(Message):
         largest_word_freq = 0
         best_result = []
 
+        #decrypt the encrypted message by applying all possible shifts
+        #to the message and then seeing which shifted message produces the most
+        #valid words to determine the key used
         for i in range(26, -1, -1):
             
             decrypted_text = self.apply_shift(i)
@@ -258,19 +263,7 @@ class CiphertextMessage(Message):
 
 if __name__ == '__main__':
 
-#    #Example test case (PlaintextMessage)
-#    plaintext = PlaintextMessage('hello', 2)
-#    print('Expected Output: jgnnq')
-#    print('Actual Output:', plaintext.get_message_text_encrypted())
-#
-#    #Example test case (CiphertextMessage)
-#    ciphertext = CiphertextMessage('jgnnq')
-#    print('Expected Output:', (24, 'hello'))
-#    print('Actual Output:', ciphertext.decrypt_message())
-
-    #TODO: WRITE YOUR TEST CASES HERE
-
-    #TODO: best shift value and unencrypted story 
+    #Test cases
     print('---New plaintext message---')
     print("New plaintext message\n")
     plaintext = PlaintextMessage('hello', 2)
