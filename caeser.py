@@ -1,7 +1,7 @@
 # Problem Set 4B
-# Name: <your name here>
-# Collaborators:
-# Time Spent: x:xx
+# Name: Vincenzo Marcella
+# Collaborators: Me, myself, and I
+# Time Spent: infinity
 
 import string
 
